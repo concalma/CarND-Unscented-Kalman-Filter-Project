@@ -58,6 +58,9 @@ public:
   ///* Weights of sigma points
   VectorXd weights_;
 
+  // measurement noise matrix
+  MatrixXd R_radar_;
+
   ///* State dimension
   int n_x_;
 
@@ -106,7 +109,7 @@ public:
   void UpdateRadar(MeasurementPackage meas_package);
 
 private:
-  double normalizeAngle(double a);
+  double normalizeAngle(double &a);
 };
 
 #endif /* UKF_H */
